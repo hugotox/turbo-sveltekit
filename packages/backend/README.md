@@ -35,4 +35,3 @@ npm run migrate
 ```bash
 npm run studio
 ```
-

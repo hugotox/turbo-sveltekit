@@ -3,8 +3,6 @@ module.exports = {
   extends: [
     'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
-    // 'plugin:import/recommended',
-    // 'plugin:import/typescript',
     'plugin:svelte/recommended',
     'prettier',
   ],
@@ -34,12 +32,7 @@ module.exports = {
       'warn',
       { varsIgnorePattern: '^\\$\\$(Props|Events|Slots)$' },
     ],
-    // 'import/no-duplicates': 'error',
+    'no-duplicate-imports': 'error',
   },
-  settings: {
-    // 'import/resolver': {
-    //   typescript: true,
-    //   node: true,
-    // },
-  },
+  settings: {},
 }
