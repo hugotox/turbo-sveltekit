@@ -1,6 +1,16 @@
 # turbo-sveltekit
 
-A fullstack Sveltekit project.
+A fullstack Sveltekit project built with:
+
+- [Turborepo](https://turbo.build/repo/docs) to manage the monorepo.
+- [SvelteKit](https://kit.svelte.dev/docs/introduction) fullstack framework.
+- [Vitest](https://vitest.dev/guide/) for unit testing.
+- [Shadcn-svelte](https://www.shadcn-svelte.com/docs) component library.
+- [TailwindCSS](https://tailwindcss.com/docs/installation) for styles
+- [Storybook](https://storybook.js.org/docs/svelte/get-started/install) stories.
+- [Turso](https://docs.turso.tech/) database (or SQLite for offline local dev)
+- [DrizzleORM](https://orm.drizzle.team/docs/overview) for managing migrations and ORM.
+- [LuciaAuth](https://lucia-auth.com/getting-started/) for user authentication.
 
 ## Getting started
 
