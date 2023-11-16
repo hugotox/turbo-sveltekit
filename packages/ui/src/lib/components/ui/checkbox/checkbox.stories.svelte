@@ -1,0 +1,27 @@
+<script context="module">
+  import { Story, Template } from '@storybook/addon-svelte-csf'
+  import Checkbox from './checkbox.svelte'
+
+  export const meta = {
+    title: 'UI/Checkbox',
+    component: Checkbox,
+  }
+</script>
+
+<script lang="ts">
+  let checked = false
+</script>
+
+<Template>
+  <div class="flex items-center space-x-2">
+    <Checkbox id="terms" bind:checked aria-labelledby="terms-label" />
+    <label
+      id="terms-label"
+      for="terms"
+      class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
+      Accept terms and conditions
+    </label>
+  </div>
+</Template>
+
+<Story name="Default" args={{}} />

@@ -1,0 +1,38 @@
+{
+  "name": "turbo-sveltekit",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "license": "UNLICENSED",
+  "main": "index.js",
+  "scripts": {
+    "build": "env-cmd -- turbo run build",
+    "check-versions": "npx check-dependency-version-consistency",
+    "check-updates": "npx npm-check-updates && turbo run check-updates",
+    "dev": "env-cmd -- turbo run dev --filter=web",
+    "format": "prettier --plugin prettier-plugin-svelte --plugin prettier-plugin-tailwindcss --write \"**/*.{js,ts,svelte,md,json}\"",
+    "lint": "turbo run lint",
+    "reset": "find . -name \"node_modules\" -type d -prune -exec rm -rf '{}' + && find . -name \".svelte-kit\" -type d -prune -exec rm -rf '{}' + && find . -name \"dist\" -type d -prune -exec rm -rf '{}' + && find . -name \".turbo\" -type d -prune -exec rm -rf '{}' +",
+    "storybook": "turbo run storybook --filter=ui",
+    "test": "turbo run test"
+  },
+  "devDependencies": {
+    "env-cmd": "^10.1.0",
+    "prettier": "^3.1.0",
+    "prettier-plugin-svelte": "^3.1.0",
+    "prettier-plugin-tailwindcss": "^0.5.7",
+    "turbo": "^1.10.16"
+  },
+  "packageManager": "npm@9.5.1",
+  "engines": {
+    "npm": ">=9.0.0 <10.0.0",
+    "node": ">=18.0.0 <19.0.0"
+  },
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "volta": {
+    "node": "18.18.2"
+  }
+}
