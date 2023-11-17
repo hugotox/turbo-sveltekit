@@ -25,13 +25,9 @@
       "types": "./dist/index.d.ts",
       "svelte": "./dist/index.js"
     },
-    "./admin.css": {
-      "import": "./dist/admin.css",
-      "require": "./dist/admin.css"
-    },
-    "./client.css": {
-      "import": "./dist/client.css",
-      "require": "./dist/client.css"
+    "./app.css": {
+      "import": "./dist/app.css",
+      "require": "./dist/app.css"
     }
   },
   "files": [
