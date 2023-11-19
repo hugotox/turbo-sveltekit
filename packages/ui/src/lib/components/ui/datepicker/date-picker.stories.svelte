@@ -14,8 +14,7 @@
 
 <Template>
   <DatePicker bind:value />
-  <br />
-  <p>Value: {value}</p>
+  <p class="mt-4">Value: {value}</p>
 </Template>
 
 <Story name="Default" args={{}} />

@@ -8,6 +8,7 @@
   import { writable } from 'svelte/store'
   import { createEventDispatcher } from 'svelte'
   import type { FormatToken } from './types'
+  import { cn } from '../../../utils'
 
   const dispatch = createEventDispatcher<{
     /** Fires when the user selects a new value in the DatePicker by clicking on a date or by pressing enter */
@@ -192,7 +193,10 @@
   on:keydown={keydown}>
   <input
     bind:this={InputElement}
-    class:invalid={!valid}
+    class={cn(
+      !valid && 'invalid',
+      'h-9 rounded-md border border-input bg-background px-3 py-1 shadow-sm transition-colors placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50'
+    )}
     type="text"
     value={text}
     {id}
@@ -244,29 +248,6 @@
 <style>
   .date-time-field {
     position: relative;
-  }
-  input {
-    color: var(--date-picker-foreground, #000000);
-    background: var(--date-picker-background, #ffffff);
-    min-width: 0px;
-    box-sizing: border-box;
-    padding: 4px 6px;
-    margin: 0px;
-    border: 1px solid rgba(103, 113, 137, 0.3);
-    border-radius: 3px;
-    width: var(--date-input-width, 150px);
-    outline: none;
-    transition: all 80ms cubic-bezier(0.4, 0, 0.2, 1);
-  }
-
-  input:focus {
-    border-color: var(--date-picker-highlight-border, #0269f7);
-    box-shadow: 0px 0px 0px 2px
-      var(--date-picker-highlight-shadow, rgba(#0269f7, 0.4));
-  }
-
-  input:disabled {
-    opacity: 0.5;
   }
 
   .invalid {

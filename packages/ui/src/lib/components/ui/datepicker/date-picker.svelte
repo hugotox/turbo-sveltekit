@@ -222,11 +222,23 @@
     }
     e.preventDefault()
   }
+  function isSameDate(calendarDay: CalendarDay, date: Date | null) {
+    return (
+      date &&
+      calendarDay.year === date.getFullYear() &&
+      calendarDay.month === date.getMonth() &&
+      calendarDay.number === date.getDate()
+    )
+  }
 </script>
 
 <!-- svelte-ignore a11y-no-noninteractive-tabindex -->
 <!-- svelte-ignore a11y-no-static-element-interactions -->
-<div class="date-time-picker" on:focusout tabindex="0" on:keydown={keydown}>
+<div
+  class="date-time-picker rounded-md border bg-popover text-popover-foreground shadow-md"
+  on:focusout
+  tabindex="0"
+  on:keydown={keydown}>
   <div class="tab-container" tabindex="-1">
     <div class="top">
       <button
@@ -347,13 +359,8 @@
             class="cell"
             on:click={() => selectDay(calendarDay)}
             class:disabled={!dayIsInRange(calendarDay, min, max)}
-            class:selected={value &&
-              calendarDay.year === value.getFullYear() &&
-              calendarDay.month === value.getMonth() &&
-              calendarDay.number === value.getDate()}
-            class:today={calendarDay.year === todayDate.getFullYear() &&
-              calendarDay.month === todayDate.getMonth() &&
-              calendarDay.number === todayDate.getDate()}
+            class:selected={isSameDate(calendarDay, value)}
+            class:today={isSameDate(calendarDay, todayDate)}
             class:other-month={calendarDay.month !== browseMonth}>
             <span>{calendarDay.number}</span>
           </div>
@@ -375,11 +382,6 @@
     padding: 0.5rem;
     cursor: default;
     font-size: 0.75rem;
-    border: 1px solid rgba(103, 113, 137, 0.3);
-    border-radius: 3px;
-    box-shadow:
-      0px 2px 6px rgba(#000000, 0.08),
-      0px 2px 6px rgba(#000000, 0.11);
     outline: none;
     transition: all 80ms cubic-bezier(0.4, 0, 0.2, 1);
   }
