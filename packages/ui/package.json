@@ -28,6 +28,86 @@
     "./app.css": {
       "import": "./dist/app.css",
       "require": "./dist/app.css"
+    },
+    "./utils": {
+      "import": "./dist/utils/index.js",
+      "require": "./dist/utils/index.d.ts"
+    },
+    "./accordion": {
+      "types": "./dist/components/ui/accordion/index.d.ts",
+      "svelte": "./dist/components/ui/accordion/index.js"
+    },
+    "./avatar": {
+      "types": "./dist/components/ui/avatar/index.d.ts",
+      "svelte": "./dist/components/ui/avatar/index.js"
+    },
+    "./button": {
+      "types": "./dist/components/ui/button/index.d.ts",
+      "svelte": "./dist/components/ui/button/index.js"
+    },
+    "./card": {
+      "types": "./dist/components/ui/card/index.d.ts",
+      "svelte": "./dist/components/ui/card/index.js"
+    },
+    "./checkbox": {
+      "types": "./dist/components/ui/checkbox/index.d.ts",
+      "svelte": "./dist/components/ui/checkbox/index.js"
+    },
+    "./dark-toggle": {
+      "types": "./dist/components/ui/dark-toggle/index.d.ts",
+      "svelte": "./dist/components/ui/dark-toggle/index.js"
+    },
+    "./datepicker": {
+      "types": "./dist/components/ui/datepicker/index.d.ts",
+      "svelte": "./dist/components/ui/datepicker/index.js"
+    },
+    "./dialog": {
+      "types": "./dist/components/ui/dialog/index.d.ts",
+      "svelte": "./dist/components/ui/dialog/index.js"
+    },
+    "./dropdown-menu": {
+      "types": "./dist/components/ui/dropdown-menu/index.d.ts",
+      "svelte": "./dist/components/ui/dropdown-menu/index.js"
+    },
+    "./form": {
+      "types": "./dist/components/ui/form/index.d.ts",
+      "svelte": "./dist/components/ui/form/index.js"
+    },
+    "./input": {
+      "types": "./dist/components/ui/input/index.d.ts",
+      "svelte": "./dist/components/ui/input/index.js"
+    },
+    "./pagination": {
+      "types": "./dist/components/ui/pagination/index.d.ts",
+      "svelte": "./dist/components/ui/pagination/index.js"
+    },
+    "./radio-group": {
+      "types": "./dist/components/ui/radio-group/index.d.ts",
+      "svelte": "./dist/components/ui/radio-group/index.js"
+    },
+    "./select": {
+      "types": "./dist/components/ui/select/index.d.ts",
+      "svelte": "./dist/components/ui/select/index.js"
+    },
+    "./switch": {
+      "types": "./dist/components/ui/switch/index.d.ts",
+      "svelte": "./dist/components/ui/switch/index.js"
+    },
+    "./table": {
+      "types": "./dist/components/ui/table/index.d.ts",
+      "svelte": "./dist/components/ui/table/index.js"
+    },
+    "./tabs": {
+      "types": "./dist/components/ui/tabs/index.d.ts",
+      "svelte": "./dist/components/ui/tabs/index.js"
+    },
+    "./textarea": {
+      "types": "./dist/components/ui/textarea/index.d.ts",
+      "svelte": "./dist/components/ui/textarea/index.js"
+    },
+    "./tooltip": {
+      "types": "./dist/components/ui/tooltip/index.d.ts",
+      "svelte": "./dist/components/ui/tooltip/index.js"
     }
   },
   "files": [
@@ -81,5 +161,69 @@
   },
   "svelte": "./dist/index.js",
   "types": "./dist/index.d.ts",
+  "typesVersions": {
+    ">4.0": {
+      "utils": [
+        "./dist/utils/index.d.ts"
+      ],
+      "accordion": [
+        "./dist/components/ui/accordion/index.d.ts"
+      ],
+      "avatar": [
+        "./dist/components/ui/avatar/index.d.ts"
+      ],
+      "button": [
+        "./dist/components/ui/button/index.d.ts"
+      ],
+      "card": [
+        "./dist/components/ui/card/index.d.ts"
+      ],
+      "checkbox": [
+        "./dist/components/ui/checkbox/index.d.ts"
+      ],
+      "dark-toggle": [
+        "./dist/components/ui/dark-toggle/index.d.ts"
+      ],
+      "datepicker": [
+        "./dist/components/ui/datepicker/index.d.ts"
+      ],
+      "dialog": [
+        "./dist/components/ui/dialog/index.d.ts"
+      ],
+      "dropdown-menu": [
+        "./dist/components/ui/dropdown-menu/index.d.ts"
+      ],
+      "form": [
+        "./dist/components/ui/form/index.d.ts"
+      ],
+      "input": [
+        "./dist/components/ui/input/index.d.ts"
+      ],
+      "pagination": [
+        "./dist/components/ui/pagination/index.d.ts"
+      ],
+      "radio-group": [
+        "./dist/components/ui/radio-group/index.d.ts"
+      ],
+      "select": [
+        "./dist/components/ui/select/index.d.ts"
+      ],
+      "switch": [
+        "./dist/components/ui/switch/index.d.ts"
+      ],
+      "table": [
+        "./dist/components/ui/table/index.d.ts"
+      ],
+      "tabs": [
+        "./dist/components/ui/tabs/index.d.ts"
+      ],
+      "textarea": [
+        "./dist/components/ui/textarea/index.d.ts"
+      ],
+      "tooltip": [
+        "./dist/components/ui/tooltip/index.d.ts"
+      ]
+    }
+  },
   "type": "module"
 }

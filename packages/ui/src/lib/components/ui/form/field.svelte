@@ -34,7 +34,9 @@
         {/if}
       </span>
     {/if}
-    {#if control}
+    {#if type === 'select' && options.length}
+      <FieldSelect {name} {options} {errorMessage} />
+    {:else if control}
       <svelte:component
         this={control}
         id={name}
@@ -42,9 +44,6 @@
         {type}
         {required}
         class={cn(!!errorMessage && 'border-destructive')} />
-    {/if}
-    {#if type === 'select' && options.length}
-      <FieldSelect {name} {options} {errorMessage} />
     {/if}
   </label>
   {#if errorMessage}

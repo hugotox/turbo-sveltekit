@@ -1,14 +1,8 @@
 <script lang="ts">
   import { enhance } from '$app/forms'
-  import {
-    Button,
-    Card,
-    CardHeader,
-    CardTitle,
-    CardContent,
-    CardFooter,
-    Field,
-  } from 'ui'
+  import { Button } from 'ui/button'
+  import { Field } from 'ui/form'
+  import { Card, CardHeader, CardTitle, CardContent, CardFooter } from 'ui/card'
   import type { ActionData, PageData } from './$types'
 
   export let data: PageData
