@@ -7,6 +7,7 @@
   } from './date-utils'
   import { getInnerLocale, type Locale } from './locale'
   import { createEventDispatcher } from 'svelte'
+  import { cn } from '../../../utils'
 
   const dispatch = createEventDispatcher<{
     /** Fires when the user selects a new value by clicking on a date or by pressing enter */
@@ -235,7 +236,7 @@
 <!-- svelte-ignore a11y-no-noninteractive-tabindex -->
 <!-- svelte-ignore a11y-no-static-element-interactions -->
 <div
-  class="date-time-picker rounded-md border bg-popover text-popover-foreground shadow-md"
+  class="date-time-picker rounded-md border bg-popover p-2 text-xs text-popover-foreground shadow-md"
   on:focusout
   tabindex="0"
   on:keydown={keydown}>
@@ -244,7 +245,6 @@
       <button
         type="button"
         class="page-button"
-        tabindex="-1"
         on:click={() => setMonth(browseDate.getMonth() - 1)}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -325,7 +325,6 @@
       <button
         type="button"
         class="page-button"
-        tabindex="-1"
         on:click={() => setMonth(browseDate.getMonth() + 1)}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -356,11 +355,15 @@
         {#each calendarDays.slice(weekIndex * 7, weekIndex * 7 + 7) as calendarDay}
           <!-- svelte-ignore a11y-click-events-have-key-events -->
           <div
-            class="cell"
+            class={cn(
+              'cell flex h-8 w-8 flex-grow items-center justify-center rounded-md hover:border hover:border-border hover:bg-muted',
+              isSameDate(calendarDay, todayDate) &&
+                'border-2 border-border font-semibold',
+              isSameDate(calendarDay, value) &&
+                'border-2 border-blue-300 bg-blue-100 hover:border-2 hover:border-blue-300 hover:bg-blue-100'
+            )}
             on:click={() => selectDay(calendarDay)}
             class:disabled={!dayIsInRange(calendarDay, min, max)}
-            class:selected={isSameDate(calendarDay, value)}
-            class:today={isSameDate(calendarDay, todayDate)}
             class:other-month={calendarDay.month !== browseMonth}>
             <span>{calendarDay.number}</span>
           </div>
@@ -375,13 +378,9 @@
 <style>
   .date-time-picker {
     display: inline-block;
-    color: var(--date-picker-foreground, #000000);
-    background: var(--date-picker-background, #ffffff);
     user-select: none;
     -webkit-user-select: none;
-    padding: 0.5rem;
     cursor: default;
-    font-size: 0.75rem;
     outline: none;
     transition: all 80ms cubic-bezier(0.4, 0, 0.2, 1);
   }
@@ -493,27 +492,6 @@
   .week {
     display: flex;
   }
-  .cell {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 2rem;
-    height: 1.94rem;
-    flex-grow: 1;
-    border-radius: 5px;
-    box-sizing: border-box;
-    border: 2px solid transparent;
-  }
-  .cell:hover {
-    border: 1px solid rgba(#808080, 0.08);
-  }
-  .cell.today {
-    font-weight: 600;
-    border: 2px solid var(--date-picker-today-border, rgba(#808080, 0.3));
-  }
-  .cell:hover {
-    background-color: rgba(#808080, 0.08);
-  }
   .cell.disabled {
     visibility: hidden;
   }
@@ -523,10 +501,5 @@
   }
   .cell.other-month span {
     opacity: 0.4;
-  }
-  .cell.selected {
-    color: var(--date-picker-selected-color, inherit);
-    background: var(--date-picker-selected-background, rgba(2, 105, 247, 0.2));
-    border: 2px solid var(--date-picker-highlight-border, #0269f7);
   }
 </style>

@@ -226,7 +226,7 @@
     }} />
   {#if visible && !disabled}
     <div
-      class="picker"
+      class="picker absolute z-10 hidden py-2"
       class:visible
       class:above={showAbove}
       transition:flyAutoPosition
@@ -260,11 +260,7 @@
     box-shadow: 0px 0px 0px 2px rgba(#f92f72, 0.5);
   }
   .picker {
-    display: none;
-    position: absolute;
-    padding: 1px;
     left: var(--picker-left-position);
-    z-index: 10;
   }
   .picker.above {
     bottom: 100%;
