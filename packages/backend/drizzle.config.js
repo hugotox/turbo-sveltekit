@@ -2,7 +2,7 @@
 export default {
   schema: './src/schema/index.ts',
   out: './drizzle',
-  driver: 'libsql',
+  driver: 'pg',
   dbCredentials: {
     url: process.env.DATABASE_URL,
   },

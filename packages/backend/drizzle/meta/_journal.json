@@ -1,12 +1,12 @@
 {
   "version": "5",
-  "dialect": "sqlite",
+  "dialect": "pg",
   "entries": [
     {
       "idx": 0,
       "version": "5",
-      "when": 1700111347136,
-      "tag": "0000_parched_warbird",
+      "when": 1701103410312,
+      "tag": "0000_wakeful_king_bedlam",
       "breakpoints": true
     }
   ]

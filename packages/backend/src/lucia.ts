@@ -2,14 +2,13 @@
 // required for node 18 or below
 import 'lucia/polyfill/node'
 import { lucia } from 'lucia'
-import { libsql } from '@lucia-auth/adapter-sqlite'
+import { pg } from '@lucia-auth/adapter-postgresql'
 import { sveltekit } from 'lucia/middleware'
-
-import { getDBClient } from './db-client'
 import { SelectSession, SelectUser } from './schema/main'
+import { pool } from './db-client'
 
 export const auth = lucia({
-  adapter: libsql(getDBClient(), {
+  adapter: pg(pool, {
     user: 'users',
     session: 'user_sessions',
     key: 'user_keys',

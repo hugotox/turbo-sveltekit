@@ -23,11 +23,13 @@ try {
   })
 } catch (e) {
   if (e instanceof Error) {
-    if (e.message.includes('SQLITE_CONSTRAINT_UNIQUE')) {
+    if (
+      e.message.includes('SQLITE_CONSTRAINT_UNIQUE') ||
+      e.message.includes('users_email_unique')
+    ) {
       console.log('Email already exist!')
-    } else {
-      console.log(e.message)
     }
+    console.log(e.message)
   }
   process.exit(1)
 }

@@ -1,28 +1,12 @@
-import { drizzle } from 'drizzle-orm/libsql'
-import { createClient, type Client } from '@libsql/client'
+import { neon, neonConfig, Pool } from '@neondatabase/serverless'
+import { drizzle } from 'drizzle-orm/neon-http'
 
-const dbClients: Record<string, Client> = {}
+neonConfig.fetchConnectionCache = true
 
-/**
- * Returns the libSQL client based on the given URL
- * It creates a new client if not already in the pool.
- */
-export const getDBClient = (dbUrl?: string) => {
-  const url = dbUrl ?? String(process.env.DATABASE_URL)
-  const authToken = String(process.env.DATABASE_AUTH_TOKEN)
-  if (!dbClients[url]) {
-    dbClients[url] = createClient({
-      url,
-      authToken,
-    })
-  }
-  return dbClients[url]!
-}
+const sql = neon(process.env.DATABASE_URL!)
 
-/**
- * Returns the Drizzle instance connected to the main database.
- */
-export const getMainDB = () => {
-  const client = getDBClient()
-  return drizzle(client)
-}
+export const pool = new Pool({
+  connectionString: process.env.DATABASE_URL,
+})
+
+export const db = drizzle(sql)
