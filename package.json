@@ -15,7 +15,8 @@
     "lint": "turbo run lint",
     "reset": "find . -name \"node_modules\" -type d -prune -exec rm -rf '{}' + && find . -name \".svelte-kit\" -type d -prune -exec rm -rf '{}' + && find . -name \"dist\" -type d -prune -exec rm -rf '{}' + && find . -name \".turbo\" -type d -prune -exec rm -rf '{}' +",
     "storybook": "turbo run storybook --filter=ui",
-    "test": "turbo run test"
+    "test": "turbo run test",
+    "update-all": "npx npm-check-updates -u && turbo run update-all"
   },
   "devDependencies": {
     "env-cmd": "^10.1.0",

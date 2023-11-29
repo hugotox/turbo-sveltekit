@@ -237,6 +237,7 @@
 <!-- svelte-ignore a11y-no-static-element-interactions -->
 <div
   class="date-time-picker rounded-md border bg-popover p-2 text-xs text-popover-foreground shadow-md"
+  on:focus
   on:focusout
   tabindex="0"
   on:keydown={keydown}>
