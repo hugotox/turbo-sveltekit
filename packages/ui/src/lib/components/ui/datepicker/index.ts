@@ -1,4 +1,3 @@
-export { default as DatePicker } from './date-picker.svelte'
-export { default as DateInput } from './date-input.svelte'
+import Datepicker from './datepicker.svelte'
 
-export { localeFromDateFnsLocale, type Locale } from './locale'
+export { Datepicker }

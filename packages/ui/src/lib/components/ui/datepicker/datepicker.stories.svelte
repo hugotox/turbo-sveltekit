@@ -1,20 +1,18 @@
 <script context="module">
   import { Story, Template } from '@storybook/addon-svelte-csf'
-  import { DatePicker } from '.'
+  import { Datepicker } from '.'
 
   export const meta = {
-    title: 'UI/DatePicker',
-    component: DatePicker,
+    title: 'UI/Datepicker',
+    component: Datepicker,
   }
 </script>
 
 <script lang="ts">
-  let value: Date
 </script>
 
-<Template>
-  <DatePicker bind:value />
-  <p class="mt-4">Value: {value}</p>
+<Template let:args>
+  <Datepicker class="w-40" {...args} />
 </Template>
 
 <Story name="Default" args={{}} />
