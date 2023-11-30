@@ -1,6 +1,7 @@
 .datepicker {
   width: -moz-min-content;
   width: min-content;
+  font-size: theme(fontSize.sm);
 }
 
 .datepicker:not(.active) {
@@ -75,7 +76,7 @@
   line-height: 1.5;
   white-space: nowrap;
   color: theme(colors.foreground);
-  font-size: 1rem;
+  font-size: theme(fontSize.sm);
 }
 
 .datepicker-controls .button:focus,

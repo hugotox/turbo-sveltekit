@@ -11,7 +11,7 @@
 <!-- svelte-ignore a11y-no-static-element-interactions -->
 <div
   class={cn(
-    'rounded-lg  bg-card text-card-foreground shadow shadow-gray-300',
+    'rounded-lg bg-card text-card-foreground shadow shadow-gray-300 dark:shadow-gray-800',
     className
   )}
   {...$$restProps}

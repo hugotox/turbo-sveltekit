@@ -31,6 +31,8 @@
       className
     )} />
   {#if showIcon}
-    <Calendar size={18} class="pointer-events-none absolute right-2 top-2" />
+    <Calendar
+      strokeWidth="1"
+      class="pointer-events-none absolute right-2 top-2 h-5 w-5 text-muted-foreground" />
   {/if}
 </div>

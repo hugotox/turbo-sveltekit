@@ -1,5 +1,6 @@
 import { withThemeByClassName } from '@storybook/addon-styling'
 import '../src/lib/app.css'
+import '../src/lib/fonts.css'
 
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
