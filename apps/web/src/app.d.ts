@@ -9,6 +9,7 @@ declare global {
     // interface Error {}
     interface Locals {
       authRequest: import('lucia').AuthRequest
+      user: import('lucia').User | undefined
     }
     // interface PageData {}
     // interface Platform {}

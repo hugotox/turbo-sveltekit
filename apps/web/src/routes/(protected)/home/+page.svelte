@@ -1,1 +1,7 @@
-<h1>Welcome!</h1>
+<script lang="ts">
+  export let data
+</script>
+
+{#if data.user}
+  welcome {data.user.firstName}
+{/if}
