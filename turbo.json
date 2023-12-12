@@ -9,7 +9,9 @@
     "lint": {},
     "storybook": {},
     "test": {},
-    "update-all": {},
+    "update-all": {
+      "cache": false
+    },
     "dev": {
       "cache": false,
       "persistent": true

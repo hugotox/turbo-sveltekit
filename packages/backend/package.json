@@ -34,7 +34,7 @@
     "eslint": "^8.55.0",
     "eslint-config-prettier": "^9.1.0",
     "lucia": "^2.7.4",
-    "prettier": "^3.1.0",
+    "prettier": "^3.1.1",
     "tsx": "^4.6.2",
     "typescript": "^5.3.3",
     "uuid": "^9.0.1"
