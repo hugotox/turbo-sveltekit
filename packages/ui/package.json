@@ -41,7 +41,7 @@
     "@storybook/sveltekit": "^7.6.4",
     "@storybook/testing-library": "^0.2.2",
     "@sveltejs/adapter-auto": "^2.1.1",
-    "@sveltejs/kit": "^1.29.1",
+    "@sveltejs/kit": "^1.30.3",
     "@sveltejs/package": "^2.2.3",
     "@types/node": "^20.10.4",
     "@types/vanillajs-datepicker": "^1.3.4",
