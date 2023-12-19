@@ -13,17 +13,17 @@ export const handle: Handle = async ({ event, resolve }) => {
 
   // validate session and redirect to login when necessary
   if (!session && !isLoginPage) {
-    throw redirect(303, `${LOGIN_URL}?next=${url.pathname}`)
+    redirect(303, `${LOGIN_URL}?next=${url.pathname}`)
   } else if (session && isLoginPage) {
-    throw redirect(303, LANDING_URL)
+    redirect(303, LANDING_URL)
   }
   if (session?.sessionId && session?.user.role !== 'client') {
     await auth.invalidateSession(session.sessionId)
     locals.authRequest.setSession(null)
-    throw redirect(302, LANDING_URL)
+    redirect(302, LANDING_URL)
   }
   if (url.pathname === '/') {
-    throw redirect(302, LANDING_URL)
+    redirect(302, LANDING_URL)
   }
 
   return await resolve(event, {

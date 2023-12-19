@@ -45,7 +45,7 @@ export const actions: Actions = {
           message: 'An unknown error occurred',
         })
       }
-      throw redirect(303, next)
+      redirect(303, next)
     }
   },
 
@@ -54,6 +54,6 @@ export const actions: Actions = {
     if (!session) return fail(401)
     await auth.invalidateSession(session.sessionId) // invalidate session
     locals.authRequest.setSession(null) // remove cookie
-    throw redirect(302, '/')
+    redirect(302, '/')
   },
 }

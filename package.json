@@ -6,7 +6,7 @@
   "license": "UNLICENSED",
   "main": "index.js",
   "scripts": {
-    "build": "env-cmd -- turbo run build",
+    "build": "env-cmd -- turbo run build test lint",
     "check-versions": "npx check-dependency-version-consistency",
     "check-updates": "npx npm-check-updates && turbo run check-updates",
     "dev": "env-cmd -- turbo run dev --filter=web",
