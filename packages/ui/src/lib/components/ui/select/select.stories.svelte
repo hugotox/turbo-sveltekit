@@ -35,7 +35,7 @@
     <SelectContent>
       <SelectGroup>
         <SelectLabel>Fruits</SelectLabel>
-        {#each fruits as fruit}
+        {#each fruits as fruit (fruit.value)}
           <SelectItem value={fruit.value} label={fruit.label}>
             {fruit.label}
           </SelectItem>
